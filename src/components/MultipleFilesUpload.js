@@ -9,7 +9,7 @@ import {
     Container
 } from 'react-bootstrap'
 
-const ipfs = ipfsHttpClient.create({
+const ipfs = ipfsHttpClient({
     host: "127.0.0.1",
     port: 5002,
     protocol: "http",
