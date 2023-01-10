@@ -8,7 +8,18 @@ import {
     ProgressBar,
     Container
 } from 'react-bootstrap'
-const ipfs = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
+
+const ipfs = ipfsHttpClient.create({
+    host: "127.0.0.1",
+    port: 5002,
+    protocol: "http",
+    /* headers: {
+      authorization: auth,
+    },
+    */
+  });
+//const ipfs = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
+
 const all = require('it-all')
 
 export const MultipleFilesUpload = ({ setUrl }) => {
@@ -40,7 +51,8 @@ export const MultipleFilesUpload = ({ setUrl }) => {
         const results = await uploadFiles(files)
         const length = results.length
         const FilesHash = results[length - 1].cid._baseCache.get('z')
-        const FilesUrl = 'https://ipfs.infura.io/ipfs/' + FilesHash
+        const FilesUrl = 'http://127.0.0.1:5002/ipfs/'  + FilesHash
+        //const FilesUrl = 'https://ipfs.infura.io/ipfs/' + FilesHash
         setUrl(FilesUrl)
         setFilesUrl(FilesUrl)
         setLoading(false)
