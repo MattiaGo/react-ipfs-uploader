@@ -20,8 +20,6 @@ const ipfs = ipfsHttpClient({
   });
 //const ipfs = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
-const all = require('it-all')
-
 export const MultipleFilesUpload = ({ setUrl }) => {
     const [files, setFiles] = useState([])
     const [filesUrl, setFilesUrl] = useState('')
