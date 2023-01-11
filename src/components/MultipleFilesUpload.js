@@ -37,11 +37,10 @@ export const MultipleFilesUpload = ({ setUrl }) => {
         })
 
         const results = await all(
-            ipfs.addAll(fileObjectsArray, { wrapWithDirectory: true })
+            ipfs.addAll(fileObjectsArray, { wrapWithDirectory: false })
         )
 
         console.log(results)
-        console.log("prova")
         return results
     }
 
