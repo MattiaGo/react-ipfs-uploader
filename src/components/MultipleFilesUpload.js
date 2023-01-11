@@ -8,6 +8,8 @@ import {
     ProgressBar,
     Container
 } from 'react-bootstrap'
+import all from 'it-all'
+
 
 const ipfs = ipfsHttpClient({
     host: "127.0.0.1",
@@ -19,7 +21,6 @@ const ipfs = ipfsHttpClient({
     */
   });
 //const ipfs = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
-const all = require('it-all')
 
 export const MultipleFilesUpload = ({ setUrl }) => {
     const [files, setFiles] = useState([])
