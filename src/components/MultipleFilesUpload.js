@@ -41,6 +41,7 @@ export const MultipleFilesUpload = ({ setUrl }) => {
         )
 
         console.log(results)
+        console.log("prova")
         return results
     }
 
